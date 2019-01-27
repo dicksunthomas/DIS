@@ -18,7 +18,7 @@ namespace Assignment1_S19
             long n2 = 15;
             long r2 = decimalToBinary(n2);
             Console.WriteLine("Binary conversion of the decimal number " + n2 + " is: " + r2);
-            
+
 
             long n3 = 1111;
             long r3 = binaryToDecimal(n3);
@@ -44,10 +44,10 @@ namespace Assignment1_S19
 
                 
                 Console.Write("The prime numbers between {0} and {1} are : \n", x, y);
-                
+                //loop for iterating through each number between the range
                 for (int num = x; num <= y; num++)
                 {
-
+                    //Method for checking if a number is prime or not
                     isPrime(num);
             }
                 Console.WriteLine();
@@ -64,12 +64,12 @@ namespace Assignment1_S19
         {
             try
             {
-               double term = 1;
-               double res = 0;
+               double term = 1;  //variable for doing the toggle 
+               double res = 0;  //variable for storing the final result
                for(int i = 1; i <= n; i++)
                 {
                    res += (factorial(i))*term / (i + 1);
-                   term = term * (-1);
+                   term = term * (-1);  //toggling between - and +
                 }
 
                 return Math.Round(res,3);
@@ -89,13 +89,12 @@ namespace Assignment1_S19
             {
                 
                 long remainder;
-
                 string result = string.Empty;
                 while (n > 0)
                 {
                     remainder = n % 2;
                     n /= 2;
-                    result = remainder.ToString() + result;
+                    result = remainder.ToString() + result; 
                     
                 }
                 return Convert.ToInt64(result);
@@ -112,22 +111,21 @@ namespace Assignment1_S19
         {
             try
             {
-                int num = Convert.ToInt32(n);
-                int dec_value = 0;
+                long num = n; 
+                long dec_value = 0; //variable for storing the final decimal value
 
-                int base1 = 1;
-                int temp = num;
-                while (temp > 0)
+                int base1 = 1;  //variable for value of power of 2
+                while (num > 0)
                 {
-                    int reminder = temp % 10;
-                    temp = temp / 10;
+                    long reminder = num % 10;
+                    num = num / 10;
 
                     dec_value += reminder * base1;
 
-                    base1 = base1 * 2;
+                    base1 = base1 * 2; 
                 }
 
-                return dec_value;
+                return Convert.ToInt32(dec_value);
             }
             catch
             {
@@ -145,13 +143,23 @@ namespace Assignment1_S19
                 Console.WriteLine("Print paramid");
                 for (int i = 1; i <= n; i++)
                 {
-                    for (a = 1; a <= (n - i); a++)   
+                    //loop for putting the initial spaces
+                    for (a = 1; a <= (n - i); a++)
+                    {
                         Console.Write(" ");
-                    for (x = 1; x <= i; x++)   
+                    }
+                    //loop for printitng the required *'s till half 
+                    for (x = 1; x <= i; x++)
+                    {
                         Console.Write('*');
+                    } 
+                        
+                    //loop for printing the required rest of the *'s
                     for (x = (i - 1); x >= 1; x--)
+                    {
                         Console.Write('*');
-                    Console.WriteLine();
+                    }
+                 Console.WriteLine();
                     
                 }
                 
@@ -166,7 +174,7 @@ namespace Assignment1_S19
         {
             try
             {
-
+                //grouping using linq
                 var output = a
                     .GroupBy(val => val)
                     .OrderBy(val => val.Key)
@@ -186,6 +194,7 @@ namespace Assignment1_S19
                 Console.WriteLine("Exception occured while computing computeFrequency()");
             }
         }
+        //function for finding the factorial
         public static int factorial(int n)
         {
             try
@@ -204,6 +213,7 @@ namespace Assignment1_S19
             }
             return 0;
         }
+        //function for checking if a number is prime or not
         public static void isPrime(int n)
         {
             try
