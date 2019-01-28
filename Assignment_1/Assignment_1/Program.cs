@@ -39,10 +39,9 @@ namespace Assignment1_S19
 
         public static void printPrimeNumbers(int x, int y)
         {
+            /* run the loop starting from x and till y and find check if each number is prime or not using isPrime() function and print the result */
             try
             {
-
-                
                 Console.Write("The prime numbers between {0} and {1} are : \n", x, y);
                 //loop for iterating through each number between the range
                 for (int num = x; num <= y; num++)
@@ -62,6 +61,8 @@ namespace Assignment1_S19
         
         public static double getSeriesResult(int n)
         {
+            /* run the loop from 1 to n and find the corresponding factorial using the factorial function and divide it by i+1, and then multiply by the toggle variable
+             * (term) to obtain the alternate + and - and atlast we use the math.round to round the result to 3 decimals */
             try
             {
                double term = 1;  //variable for doing the toggle 
@@ -85,6 +86,8 @@ namespace Assignment1_S19
 
         public static long decimalToBinary(long n)
         {
+            /* We are diving the decimal by 2 during each iteration and the reminder is converted to string and concantinated with the output to 
+             * obtain the required binary result and atlast it is converted to Int64*/
             try
             {
                 
@@ -109,6 +112,8 @@ namespace Assignment1_S19
 
         public static int binaryToDecimal(long n)
         {
+            /*logic for this function is to divide the binary by 10 each time the loop runs and multiply the 
+            reminder with the base1 variable which is power of 2*/
             try
             {
                 long num = n; 
@@ -172,6 +177,7 @@ namespace Assignment1_S19
 
         public static void computeFrequency(int[] a)
         {
+            /* this I have done using linq, by using the groupby function and then sorting and selecting the required output */
             try
             {
                 //grouping using linq
@@ -197,6 +203,7 @@ namespace Assignment1_S19
         //function for finding the factorial
         public static int factorial(int n)
         {
+            /* run the loop from 1 to n and keep on multiplying the result by i to obtain the factorial of n */
             try
             {
                 int result = n;
@@ -216,6 +223,8 @@ namespace Assignment1_S19
         //function for checking if a number is prime or not
         public static void isPrime(int n)
         {
+            /* we divide n by 2 to n/2 and see if the reminder becomes 0 or not and accordingly we increase the counter and in the end if the counter
+             * value is 0 and if the number n is not 1 then it is a prime number */
             try
             {
                 int i, ctr;
